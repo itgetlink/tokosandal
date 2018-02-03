@@ -125,7 +125,7 @@ class Welcome extends CI_Controller {
 	}
 	function logout(){
 		$this->session->unset_userdata('user_login');
-	   redirect(base_url()."user/welcome/index", 'refresh');
+	   redirect(base_url()."index.php/user/welcome/index", 'refresh');
 	}
 	function register()
 	{  

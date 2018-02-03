@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrasi </a></li>
 		<?php } ?>
 			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : +62813-2112-3403</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">bearpath.sandal@gmail.com</a></li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:bearpath@gmail.com">bearpath.sandal@gmail.com</a></li>
 		</ul>
 	</div>
 </div>
@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 		<!-- header-bot -->
 			<div class="col-md-4 logo_agile">
-				<h1><a href="index.html"><span>B</span>EARPATH </a></h1>
+				<h1><a href="index.php"><span>B</span>EARPATH </a></h1>
 			</div>
         <!-- header-bot -->
 		<div class="clearfix"></div>
@@ -75,11 +75,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="menu__item"><a class="menu__link" href="<?php echo base_url().'user/welcome/index'?>">Home <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'user/welcome/produk'?>">Produk</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'user/welcome/customize'?>">Customize</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'user/welcome/about'?>">About</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'user/welcome/contact'?>">Contact</a></li>
+					<li class="menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/index'?>">Home <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/produk'?>">Produk</a></li>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/customize'?>">Customize</a></li>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/about'?>">About</a></li>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/contact'?>">Contact</a></li>
 					<?php  
 					if($session){ ?>
 					<li class=" menu__item"><a style="color:red" class="menu__link" href="<?php echo base_url().'user/order/listOrder'?>">Order</a></li>
