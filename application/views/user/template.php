@@ -184,8 +184,10 @@ function login(){
 		  if(msg=="1"){
 				$('#info_login').html('<div class="alert alert-success">Login berhasil</div>');
 				setTimeout(function(){ location.reload();},1500);
+			}else if(msg=="2"){
+				$('#info_login').html('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+'Username atau Password salah'+'</div>');
 			}else{
-				$('#info_login').html('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+msg+'</div>');
+				$('#info_login').html("");
 			}
 	  }
 	});

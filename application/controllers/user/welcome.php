@@ -92,7 +92,8 @@ class Welcome extends CI_Controller {
 		{
 			//Field validation failed.  User redirected to login page
 			
-			$this->load->view('login');
+			//$this->load->view('login');
+			echo "0";
 		}
 		else
 		{			
@@ -117,7 +118,7 @@ class Welcome extends CI_Controller {
 			}
 			else
 			{			  
-				echo "Username atau password salah";
+				echo "2";
 				
 			} //end else
 		} //end validation
