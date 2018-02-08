@@ -143,9 +143,9 @@ class Produk extends CI_Controller {
 			$row[] = '<span id="pname'.$produk->ID.'">'.$produk->NAMA_PRODUK.'</span>'; 
 			$row[] = '<span id="pdesc'.$produk->ID.'">'.$produk->KETERANGAN.'</span>';  
 			$row[] = '<span id="pdesc'.$produk->ID.'">'.$produk->HARGA.'</span>';  
-			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR1.'" style="width:50%;height:50%;"/>';  
-			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR2.'" style="width:50%;height:50%;"/>';  
-			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR3.'" style="width:50%;height:50%;"/>';  
+			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR1.'" style="width:100%;height:10%;"/>';  
+			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR2.'" style="width:100%;height:10%;"/>';  
+			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR3.'" style="width:100%;height:10%;"/>';  
 			$row[] = '<span id="pedit'.$produk->ID.'"><a title="edit produk" href="javascript:void(0);" onclick="show_edit(\''.$produk->ID.'\')">Edit Produk</a></span>'; 
 			$row[] = '<span id="pedit'.$produk->ID.'"><a title="Detail produk" href="javascript:void(0);" onclick="show_detail(\''.$produk->ID.'\')">Stok Produk</a></span>'; 
 			
