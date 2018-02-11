@@ -132,7 +132,7 @@ $("form#tambahProduk").submit(function(event){
 	//alert('aa');
 	//var dataVal=$('#tambahProduk').serialize();
 	$.ajax({
-		url :'<?php echo base_url();?>admin/produk/tambahProduk', 
+		url :'<?php echo base_url();?>index.php/admin/produk/tambahProduk', 
 		type: "post", //form method
 		data: dataVal,
 		contentType: false,
@@ -157,7 +157,7 @@ $("form#tambahProduk").submit(function(event){
 })
 
 function showProduk(){
-	window.location = "<?php echo base_url();?>admin/produk/index";
+	window.location = "<?php echo base_url();?>index.php/admin/produk/index";
 }
 
 </script>

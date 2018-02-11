@@ -74,7 +74,7 @@ $("form#editAbout").submit(function(event){
 	var dataVal=$('#editAbout').serialize();
 	console.log(dataVal);
 	$.ajax({
-		url :'<?php echo base_url();?>admin/about/update', 
+		url :'<?php echo base_url();?>index.php/admin/about/update', 
 		type: "post", //form method
 		data: dataVal,
 		dataType:"json", //misal kita ingin format datanya brupa json
@@ -87,7 +87,7 @@ $("form#editAbout").submit(function(event){
 			$('#fildButton').show();
 			$('#spinner').hide();
 			if(result.code==1){
-				window.location = "<?php echo base_url();?>admin/about/index";
+				window.location = "<?php echo base_url();?>index.php/admin/about/index";
 				bootbox.alert(result.massage);
 			}else{
 			   bootbox.alert(result.massage);
@@ -97,7 +97,7 @@ $("form#editAbout").submit(function(event){
 })
 
 function showCustomer(){
-	window.location = "<?php echo base_url();?>admin/customer/index";
+	window.location = "<?php echo base_url();?>index.php/admin/customer/index";
 	
 }
 

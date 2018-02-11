@@ -53,7 +53,7 @@ $( document ).ready(function() {
 });
 
 	function formTambahCustomer(){
-		location.href="<?php echo base_url();?>admin/customer/formCustomer";
+		location.href="<?php echo base_url();?>index.php/admin/customer/formCustomer";
 	}
 	
 	function list_data(){
@@ -66,7 +66,7 @@ $( document ).ready(function() {
 
 			// Load data for the table's content from an Ajax source
 			"ajax": {
-				"url": "<?php echo site_url('admin/customer/ajax_list')?>",
+				"url": "<?php echo site_url('index.php/admin/customer/ajax_list')?>",
 				"type": "POST"
 			},
 
@@ -87,7 +87,7 @@ $( document ).ready(function() {
 	}
 	
 	function show_edit(id){
-		location.href="<?php echo base_url();?>admin/customer/formEdit/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/customer/formEdit/"+id;
 	}
 	
 </script>

@@ -57,7 +57,7 @@ $( document ).ready(function() {
 });
 
 	function formTambahProduk(){
-		location.href="<?php echo base_url();?>admin/produk/formProduk";
+		location.href="<?php echo base_url();?>index.php/admin/produk/formProduk";
 	}
 	
 	function list_data(){
@@ -70,7 +70,7 @@ $( document ).ready(function() {
 
 			// Load data for the table's content from an Ajax source
 			"ajax": {
-				"url": "<?php echo site_url('admin/produk/ajax_list')?>",
+				"url": "<?php echo site_url('index.php/admin/produk/ajax_list')?>",
 				"type": "POST"
 			},
 
@@ -91,10 +91,10 @@ $( document ).ready(function() {
 	}
 	
 	function show_edit(id){
-		location.href="<?php echo base_url();?>admin/produk/formEdit/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/produk/formEdit/"+id;
 	}
 	
 	function show_detail(id){
-		location.href="<?php echo base_url();?>admin/produk/detailProduk/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/produk/detailProduk/"+id;
 	}
 </script>

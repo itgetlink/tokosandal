@@ -145,7 +145,7 @@ $("form#editProduk").submit(function(event){
 			if(result.code==1){
 				$('#editProduk')[0].reset();
 				bootbox.alert(result.massage);
-				window.location = "<?php echo base_url();?>admin/produk/index";
+				window.location = "<?php echo base_url();?>index.php/admin/produk/index";
 			}else{
 			   bootbox.alert(result.massage);
 			}
@@ -154,7 +154,7 @@ $("form#editProduk").submit(function(event){
 })
 
 function showProduk(){
-	window.location = "<?php echo base_url();?>admin/produk/index";
+	window.location = "<?php echo base_url();?>index.php/admin/produk/index";
 }
 
 </script>
