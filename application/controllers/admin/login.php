@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 		$login = $this->session->userdata('logged_in');
 		if(empty($login))
 		{
-			$this->load->view('index.php/admin/login/view_login');
+			$this->load->view('admin/login/view_login');
 		}else{
 			redirect('index.php/admin/home');
 		}
@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 	   	if($this->form_validation->run() == FALSE)
 	   	{
 		 	//Field validation failed.  User redirected to login page
-			$this->load->view('index.php/admin/login/view_login');
+			$this->load->view('admin/login/view_login');
 	   	}
 	  	else
 	   	{			
@@ -59,7 +59,7 @@ class Login extends CI_Controller {
 		    else
 		    {		
 				$data['check']='username atau password tidak ada';
-				$this->load->view('index.php/admin/login/view_login',$data);
+				$this->load->view('admin/login/view_login',$data);
 		    } //end else
 		} //end validation
 	} //end fundtion
