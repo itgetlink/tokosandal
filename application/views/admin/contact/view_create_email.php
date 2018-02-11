@@ -46,7 +46,7 @@
    function sendMail(){
 	var dataVal = $('#formContact').serialize();
 	$.ajax({
-		url :'<?php echo base_url();?>admin/contact/sendMail', 
+		url :'<?php echo base_url();?>index.php/admin/contact/sendMail', 
 		type: "post", //form method
 		data: dataVal,
 		dataType:"json", //misal kita ingin format datanya brupa json
@@ -57,7 +57,7 @@
 			if(result.code==1){
 				$('#formContact')[0].reset();
 				bootbox.alert(result.massage);
-				// window.location = "<?php echo base_url();?>admin/produk/index";
+				// window.location = "<?php echo base_url();?>index.php/admin/produk/index";
 			}else{
 			   bootbox.alert(result.massage);
 			}

@@ -113,7 +113,7 @@ $("form#tambahCustomer").submit(function(event){
 	//alert('aa');
 	var dataVal=$('#tambahCustomer').serialize();
 	$.ajax({
-		url :'<?php echo base_url();?>admin/customer/tambahCustomer', 
+		url :'<?php echo base_url();?>index.php/admin/customer/tambahCustomer', 
 		type: "post", //form method
 		data: dataVal,
 		// contentType: false,
@@ -138,7 +138,7 @@ $("form#tambahCustomer").submit(function(event){
 })
 
 function showCustomer(){
-	window.location = "<?php echo base_url();?>admin/customer/index";
+	window.location = "<?php echo base_url();?>index.php/admin/customer/index";
 }
 
 </script>

@@ -19,7 +19,7 @@ class Contact extends CI_Controller {
 		else
 		{
 			//If no session, redirect to login page
-			redirect(base_url().'admin/login', 'refresh');
+			redirect(base_url().'index.php/admin/login', 'refresh');
 		}
 		
 		$this->load->model('produk_model');

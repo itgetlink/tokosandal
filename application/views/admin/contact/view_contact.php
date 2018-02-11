@@ -53,10 +53,10 @@ $( document ).ready(function() {
 });
 
 	function createEmail(){
-		location.href="<?php echo base_url();?>admin/contact/createEmail/";
+		location.href="<?php echo base_url();?>index.php/admin/contact/createEmail/";
 	}
 	function balasEmails(id){
-		location.href="<?php echo base_url();?>admin/contact/createEmail2/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/contact/createEmail2/"+id;
 	}
 	
 	function list_data(){
@@ -69,7 +69,7 @@ $( document ).ready(function() {
 
 			// Load data for the table's content from an Ajax source
 			"ajax": {
-				"url": "<?php echo site_url('admin/contact/ajax_list')?>",
+				"url": "<?php echo site_url('index.php/admin/contact/ajax_list')?>",
 				"type": "POST"
 			},
 
@@ -90,10 +90,10 @@ $( document ).ready(function() {
 	}
 	
 	function show_edit(id){
-		location.href="<?php echo base_url();?>admin/produk/formEdit/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/produk/formEdit/"+id;
 	}
 	
 	function show_detail(id){
-		location.href="<?php echo base_url();?>admin/produk/detailProduk/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/produk/detailProduk/"+id;
 	}
 </script>

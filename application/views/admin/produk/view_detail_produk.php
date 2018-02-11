@@ -114,7 +114,7 @@ $( document ).ready(function() {
 });
 
 	/* function formTambahProduk(){
-		location.href="<?php echo base_url();?>admin/produk/formProduk";
+		location.href="<?php echo base_url();?>index.php/admin/produk/formProduk";
 	} */
 	
 	function list_data(){
@@ -127,7 +127,7 @@ $( document ).ready(function() {
 
 			// Load data for the table's content from an Ajax source
 			"ajax": {
-				"url": "<?php echo site_url('admin/produk/ajax_list_detail')?>",
+				"url": "<?php echo site_url('index.php/admin/produk/ajax_list_detail')?>",
 				"type": "POST",
 				"data": {
 					"ID" : "<?php echo $id?>"
@@ -151,13 +151,13 @@ $( document ).ready(function() {
 	}
 	
 	function show_edit(id){
-		location.href="<?php echo base_url();?>admin/produk/formEdit/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/produk/formEdit/"+id;
 	}
 	
 	function show_update(id){
 		
 		$.ajax({
-			url :'<?php echo base_url();?>admin/produk/loadStok', 
+			url :'<?php echo base_url();?>index.php/admin/produk/loadStok', 
 			type: "post", //form method
 			data: {
 				id : id
@@ -187,7 +187,7 @@ $( document ).ready(function() {
 		var ukuran 	= $('#ukuran').val();
 		var stok	= $('#stok').val();
 		$.ajax({
-			url :'<?php echo base_url();?>admin/produk/updateDetail', 
+			url :'<?php echo base_url();?>index.php/admin/produk/updateDetail', 
 			type: "post", //form method
 			data: {
 				id : id,
@@ -221,7 +221,7 @@ $( document ).ready(function() {
 		var addukuran 	= $('#addukuran').val();
 		var addstok		= $('#addstok').val();
 		$.ajax({
-			url :'<?php echo base_url();?>admin/produk/saveDetail', 
+			url :'<?php echo base_url();?>index.php/admin/produk/saveDetail', 
 			type: "post", //form method
 			data: {
 				idProduk : idProduk,

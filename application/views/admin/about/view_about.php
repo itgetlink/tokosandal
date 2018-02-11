@@ -56,7 +56,7 @@ $( document ).ready(function() {
 
 			// Load data for the table's content from an Ajax source
 			"ajax": {
-				"url": "<?php echo site_url('admin/about/ajax_list')?>",
+				"url": "<?php echo site_url('index.php/admin/about/ajax_list')?>",
 				"type": "POST"
 			},
 
@@ -77,7 +77,7 @@ $( document ).ready(function() {
 	}
 	
 	function show_edit(id){
-		location.href="<?php echo base_url();?>admin/about/formEdit/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/about/formEdit/"+id;
 	}
 	
 </script>
