@@ -83,7 +83,7 @@
           
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="<?php echo base_url().'admin/home/logout'?>">
+            <a href="<?php echo base_url().'index.php/admin/home/logout'?>">
               <span class="hidden-xs">Logout</span>
             </a>
             
@@ -116,12 +116,12 @@
       <ul class="sidebar-menu">
         <li class="header">Menu</li>
        
-        <li class="<?php echo $controller=='home'?'active':'';?>"><a href="<?php echo base_url().'admin/home'?>"><i class="fa fa-home"></i> <span>Home</span></a></li> 
-        <li class="<?php echo $controller=='produk'?'active':'';?>"><a href="<?php echo base_url().'admin/produk'?>"><i class="fa fa-home"></i> <span>Produk</span></a></li>
-		<li class="<?php echo $controller=='customer'?'active':'';?>"><a href="<?php echo base_url().'admin/customer'?>"><i class="fa fa-home"></i> <span>Customer</span></a></li> 
-		<li class="<?php echo $controller=='contact'?'active':'';?>"><a href="<?php echo base_url().'admin/contact'?>"><i class="fa fa-home"></i> <span>Contact</span></a></li> 
-		<li class="<?php echo $controller=='transaksi'?'active':'';?>"><a href="<?php echo base_url().'admin/transaksi'?>"><i class="fa fa-home"></i> <span>Transaksi</span></a></li>
-		<li class="<?php echo $controller=='about'?'active':'';?>"><a href="<?php echo base_url() .'admin/about'?>"><i class="fa fa-home"></i> <span>About</span></a></li>
+        <li class="<?php echo $controller=='home'?'active':'';?>"><a href="<?php echo base_url().'index.php/admin/home'?>"><i class="fa fa-home"></i> <span>Home</span></a></li> 
+        <li class="<?php echo $controller=='produk'?'active':'';?>"><a href="<?php echo base_url().'index.php/admin/produk'?>"><i class="fa fa-home"></i> <span>Produk</span></a></li>
+		<li class="<?php echo $controller=='customer'?'active':'';?>"><a href="<?php echo base_url().'index.php/admin/customer'?>"><i class="fa fa-home"></i> <span>Customer</span></a></li> 
+		<li class="<?php echo $controller=='contact'?'active':'';?>"><a href="<?php echo base_url().'index.php/admin/contact'?>"><i class="fa fa-home"></i> <span>Contact</span></a></li> 
+		<li class="<?php echo $controller=='transaksi'?'active':'';?>"><a href="<?php echo base_url().'index.php/admin/transaksi'?>"><i class="fa fa-home"></i> <span>Transaksi</span></a></li>
+		<li class="<?php echo $controller=='about'?'active':'';?>"><a href="<?php echo base_url() .'index.php/admin/about'?>"><i class="fa fa-home"></i> <span>About</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
