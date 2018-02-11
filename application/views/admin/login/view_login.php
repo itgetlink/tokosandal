@@ -33,7 +33,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Login</p>
 
-    <?php echo form_open(base_url().'admin/login/checkValidation','class="form-signin"'); ?>
+    <?php echo form_open(base_url().'index.php/admin/login/checkValidation','class="form-signin"'); ?>
 	<?php 
 	$valid=validation_errors();
 	if(!empty($valid)){
