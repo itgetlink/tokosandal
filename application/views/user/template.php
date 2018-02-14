@@ -91,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="top_nav_right">
 			<div class="wthreecartaits wthreecartaits2 cart cart box_1"> 
-			<a href="<?php echo base_url();?>user/order/cart"><button class="w3view-cart" type="button" name="cart" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
+			<a href="<?php echo base_url();?>index.php/user/order/cart"><button class="w3view-cart" type="button" name="cart" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
 					<!--form action="#" method="post" class="last"> 
 						<input type="hidden" name="cmd" value="_cart">
 						<input type="hidden" name="display" value="1">
