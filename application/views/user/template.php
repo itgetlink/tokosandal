@@ -82,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/contact'?>">Contact</a></li>
 					<?php  
 					if($session){ ?>
-					<li class=" menu__item"><a style="color:red" class="menu__link" href="<?php echo base_url().'user/order/listOrder'?>">Order</a></li>
+					<li class=" menu__item"><a style="color:red" class="menu__link" href="<?php echo base_url().'index.php/user/order/listOrder'?>">Order</a></li>
 					<?php } ?>
 				  </ul>
 				</div>
