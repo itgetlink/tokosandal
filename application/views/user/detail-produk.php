@@ -41,8 +41,8 @@
 					<?php 
 					if($data[0]['TYPE_PRODUK']==1){
 						if(count($data_stok)>0){?>
-						<div>Ukuran : <span><select name="ukuran" onchange="change_ukuran(this.value)">
-							<option value="">Ukuran</option>
+						<div>Ukuran : <span><select name="ukuran" id="ukuran" onchange="change_ukuran(this.value)">
+							<option value="ukur">Ukuran</option>
 							<?php foreach($data_stok as $value){ ?>
 								<option value="<?php echo $value['ID'].'-'.$value['STOK'];?>"><?php echo $value['UKURAN'];?></option>
 							<?php } ?>
@@ -175,25 +175,29 @@ function change_ukuran(val){
 }
 function submit_cart(){
 	formData = $('#form_cart').serialize();
-	
+	uku=$('#ukuran').val();
 	qty=parseInt($('#qty').val());
-	if(qty==0){
-		alert("Stok habis");
+	if(uku=='ukur'){
+		alert("Ukuran Belum dipilih");
 	}else{
-		$.ajax({
-		  method: "POST",
-		  url: "<?php echo base_url();?>index.php/user/order/input_order",
-		  data: formData+"&ket=1",
-		  dataType:"json",
-		  success: function(msg){
+		if(qty==0){
+			alert("Stok habis");
+		}else{
+			$.ajax({
+		  	method: "POST",
+		  	url: "<?php echo base_url();?>index.php/user/order/input_order",
+		  	data: formData+"&ket=1",
+		  	dataType:"json",
+		  	success: function(msg){
 			  if(msg==1){
 					bootbox.alert( "sukses" );
 					setTimeout(function(){ location.reload(true);},1500);
 				}else{
 					bootbox.alert('gagal: '+msg);
 				}
-		  }
-		});
+		  	}
+			});
+		}
 	}
 }
 function submit_cart_cust(){
