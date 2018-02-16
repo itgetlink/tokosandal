@@ -1,10 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-Class Produk_model extends CI_Model
+Class Transaksi_model extends CI_Model
 {
 	function save($data)
 	{
-		$this->db->insert('produk', $data);
+		$this->db->insert('transaksi', $data);
 		if($this->db->affected_rows() == 1){
 			$result = true;
 		}else{
@@ -15,7 +15,7 @@ Class Produk_model extends CI_Model
 	
 	function saveDetail($data)
 	{
-		$this->db->insert('produk_detail', $data);
+		$this->db->insert('transaksi_detail', $data);
 		if($this->db->affected_rows() == 1){
 			$result = true;
 		}else{
@@ -27,7 +27,7 @@ Class Produk_model extends CI_Model
 	function loadType() //dipakai untuk jabatan admin
 	{	
 		$this -> db -> select('*');
-		$this -> db -> from('produk_type');
+		$this -> db -> from('transaksi_type');
 		$query = $this -> db -> get()->result_array();
 		return $query;
 	} 
@@ -35,42 +35,42 @@ Class Produk_model extends CI_Model
 	function load($data,$type) //dipakai untuk jabatan admin
 	{	
 		$this -> db -> select('*');
-		$this -> db -> from('produk');
+		$this -> db -> from('transaksi');
 		$this -> db -> where('FLAG_DEL',0);
 		if($type==1){
 			$this -> db -> where('ID',$data);
 		}
 		if($type==2){
-			$this -> db -> where('TYPE_PRODUK',$data);
+			$this -> db -> where('TYPE_TRANSAKSI',$data);
 		}
 		$query = $this -> db -> get()->result_array();
 		return $query;	
 	} 
 	
-	function loadStok($data,$type)  
+	function loadTransaksi($data,$type)  
 	{	
 		$this -> db -> select('*');
-		$this -> db -> from('produk_detail');
+		$this -> db -> from('transaksi_detail');
 		// $this -> db -> where('FLAG_DEL',0);
 		if($type==1){
 			$this -> db -> where('ID',$data);
 		}
 		if($type==2){
-			$this -> db -> where('PRODUK_ID',$data);
+			$this -> db -> where('Transaksi_ID',$data);
 		}
 		$query = $this -> db -> get()->result_array();
 		return $query;	
 	} 
 	
-	var $table = 'produk P';
-	var $column_order = array(null,'ID', 'NAMA_PRODUK','TYPE_PRODUK','KETERANGAN','GAMBAR1','GAMBAR2','GAMBAR3','HARGA'); //set column field database for datatable orderable
-	var $column_search = array('ID', 'NAMA_PRODUK','TYPE_PRODUK','KETERANGAN','GAMBAR1','GAMBAR2','GAMBAR3','HARGA'); //set column field database for datatable searchable 
+	var $table = 'transaksi T';
+	var $column_order = array(null,'ID', 'ID_CUSTOMER','TGL_TRANSAKSI','NAMA_PENERIMA','ALAMAT_PENERIMA','PROVINSI_PENERIMA','KOTA_PENERIMA','KODEPOS_PENERIMA','NOTLP_PENERIMA','ONGKIR','STATUS_TRANSAKSI','FLAG_DEL'); //set column field database for datatable orderable
+	var $column_search = array('ID', 'ID_CUSTOMER','TGL_TRANSAKSI','NAMA_PENERIMA','ALAMAT_PENERIMA','PROVINSI_PENERIMA','KOTA_PENERIMA','KODEPOS_PENERIMA','NOTLP_PENERIMA','ONGKIR','STATUS_TRANSAKSI','FLAG_DEL'); //set column field database for datatable searchable 
 	var $order = array('ID' => 'asc'); // default order 
 	
 	private function _get_datatables_query()
 	{
 		
-		$this -> db -> select('ID,NAMA_PRODUK,TYPE_PRODUK,KETERANGAN,GAMBAR1,GAMBAR2,GAMBAR3,HARGA');
+		$this -> db -> select('ID,ID_CUSTOMER,TGL_TRANSAKSI,NAMA_PENERIMA,ALAMAT_PENERIMA,PROVINSI_PENERIMA,KOTA_PENERIMA,KODEPOS_PENERIMA,NOTLP_PENERIMA,NOTLP_PENERIMA,ONGKIR,STATUS_TRANSAKSI,FLAG_DEL');
 		 
 		$this -> db -> from($this->table);
 		$this -> db -> where('FLAG_DEL',0);
@@ -138,7 +138,7 @@ Class Produk_model extends CI_Model
 	function update($data,$id)
 	{
 		$this->db->where('ID',$id); 
-	 	$this->db->update('produk', $data);
+	 	$this->db->update('transaksi', $data);
 		if ($this->db->affected_rows() == 1) { 
             return TRUE;
         } else { 
@@ -146,7 +146,7 @@ Class Produk_model extends CI_Model
         }
 	}
 	
-	var $tableDetail = 'v_produk_stok';
+	var $tableDetail = 'transaksi_detail';
 	var $column_order_detail = array(null,'PRODUK_DETAIL_ID', 'PRODUK_ID','UKURAN','STOK','NAMA_PRODUK','GAMBAR1'); //set column field database for datatable orderable
 	var $column_search_detail = array('PRODUK_DETAIL_ID', 'PRODUK_ID','UKURAN','STOK','NAMA_PRODUK','GAMBAR1'); //set column field database for datatable searchable 
 	var $order_detail = array('PRODUK_DETAIL_ID' => 'asc'); // default order 
@@ -219,7 +219,7 @@ Class Produk_model extends CI_Model
 	function updateDetail($data,$id)
 	{
 		$this->db->where('ID',$id); 
-	 	$this->db->update('produk_detail', $data);
+	 	$this->db->update('transaksi_detail', $data);
 		if ($this->db->affected_rows() == 1) { 
             return TRUE;
         } else { 

@@ -22,7 +22,7 @@ class Transaksi extends CI_Controller {
 			redirect(base_url().'index.php/admin/login', 'refresh');
 		}
 		
-		$this->load->model('customer_model');
+		$this->load->model('transaksi_model');
 		
 	 }
 	 
@@ -32,22 +32,22 @@ class Transaksi extends CI_Controller {
 		$this->load->view($this->template,$data);
 	}
 	
-	function formCustomer(){
-		$data['content'] = 'admin/customer/view_customer_save';
+	function formTransaksi(){
+		$data['content'] = 'admin/transaksi/view_transaksi_save';
 		$data['username'] = $this->username;
 		
 		$this->load->view($this->template,$data);
 	}
 	
-	function tambahCustomer(){
+	function tambahTransaksi(){
 			
-			$data['NAMA_CUSTOMER']	= $this->input->post('nama');
+			$data['NAMA']	= $this->input->post('nama');
 			$data['ALAMAT']			= $this->input->post('alamat');
 			$data['USERNAME']		= $this->input->post('username');
 			$data['PASSOWORD']		= md5($this->input->post('password'));
 			$data['EMAIL']			= $this->input->post('email');
 			
-			$save = $this->customer_model->save($data);			
+			$save = $this->transaksi_model->save($data);			
 			if($save){
 				$result['code'] = 1; 
 				$result['massage'] = 'data berhasil di simpan'; 
@@ -94,28 +94,29 @@ class Transaksi extends CI_Controller {
 	
 	public function ajax_list()
 	{
-		$list = $this->customer_model->get_datatables();
+		$list = $this->transaksi_model->get_datatables();
 		// print_r($list);
 		// die(); 
 		$data = array();
 		$no = $_POST['start'];
-		foreach ($list as $produk) {
+		foreach ($list as $transaksi) {
 			$no++;
 			$row = array();
 			
-			$row[] = '<span id="ptype'.$produk->ID.'">'.$produk->NAMA_CUSTOMER.'</span>'; 
-			$row[] = '<span id="pname'.$produk->ID.'">'.$produk->USERNAME.'</span>'; 
-			$row[] = '<span id="pdesc'.$produk->ID.'">'.$produk->EMAIL.'</span>';  
-			$row[] = '<span id="pdesc'.$produk->ID.'">'.$produk->ALAMAT.'</span>';  
-			$row[] = '<span id="pedit'.$produk->ID.'"><a title="edit produk" href="javascript:void(0);" onclick="show_edit(\''.$produk->ID.'\')">Edit Produk</a></span>'; 
+			$row[] = '<span id="ptype'.$transaksi->ID.'">'.$transaksi->TGL_TRANSAKSI.'</span>'; 
+			$row[] = '<span id="pname'.$transaksi->ID.'">'.$transaksi->NAMA_PENERIMA.'</span>'; 
+			$row[] = '<span id="pdesc'.$transaksi->ID.'">'.$transaksi->ALAMAT_PENERIMA.'</span>';  
+			$row[] = '<span id="pdesc'.$transaksi->ID.'">'.$transaksi->NOTLP_PENERIMA.'</span>';  
+			$row[] = '<span id="pdesc'.$transaksi->ID.'">'.$transaksi->STATUS_TRANSAKSI.'</span>';  
+			$row[] = '<span id="pedit'.$transaksi->ID.'"><a title="edit transaksi" href="javascript:void(0);" onclick="show_edit(\''.$transaksi->ID.'\')">Edit Transaksi</a></span>'; 
 			
 			$data[] = $row;
 		}
 
 		$output = array(
 						"draw" => $_POST['draw'],
-						"recordsTotal" => $this->customer_model->count_all(),
-						"recordsFiltered" => $this->customer_model->count_filtered(),
+						"recordsTotal" => $this->transaksi_model->count_all(),
+						"recordsFiltered" => $this->transaksi_model->count_filtered(),
 						"data" => $data,
 				);
 		
@@ -123,9 +124,9 @@ class Transaksi extends CI_Controller {
 	}
 	
 	function formEdit($id){
-		$data['content'] = 'admin/customer/view_customer_edit';
+		$data['content'] = 'admin/customer/view_transaksi_edit';
 		$data['username'] = $this->username;
-		$data['data'] = $this->customer_model->load($id,$type=1);// type 1 untuk load produk by id
+		$data['data'] = $this->transaksi_model->load($id,$type=1);// type 1 untuk load produk by id
 		$this->load->view($this->template,$data);
 	}
 	
@@ -141,7 +142,7 @@ class Transaksi extends CI_Controller {
 			print_r($data);
 			die();
 			
-			$save = $this->customer_model->update($data);			
+			$save = $this->transaksi_model->update($data);			
 			if($save){
 				$result['code'] = 1; 
 				$result['massage'] = 'data berhasil di simpan'; 

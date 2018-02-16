@@ -21,7 +21,7 @@
              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Type Produk</th>
+                  <!--<th>Type Produk</th>
                   <th>Nama Produk</th>
                   <th>Keterangan</th>
                   <th>Harga Produk</th>
@@ -29,7 +29,13 @@
                   <th>Gambar2</th>
                   <th>Gambar3</th>
                   <th>Edit Produk</th>
-                  <th>Stok Produk</th>
+                  <th>Stok Produk</th>-->
+									<th>Tanggal</th>
+									<th>Nama Penerima</th>
+									<th>Alamat Penerima</th>
+									<th>No Telepon</th>				
+									<th>Status</th>				
+									<th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,8 +62,8 @@ $( document ).ready(function() {
 	 list_data();
 });
 
-	function formTambahProduk(){
-		location.href="<?php echo base_url();?>index.php/admin/produk/formProduk";
+	function formTambahTransaksi(){
+		location.href="<?php echo base_url();?>index.php/admin/transaksi/formTransaksi";
 	}
 	
 	function list_data(){
@@ -91,10 +97,10 @@ $( document ).ready(function() {
 	}
 	
 	function show_edit(id){
-		location.href="<?php echo base_url();?>index.php/admin/produk/formEdit/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/transaksi/formEdit/"+id;
 	}
 	
 	function show_detail(id){
-		location.href="<?php echo base_url();?>index.php/admin/produk/detailProduk/"+id;
+		location.href="<?php echo base_url();?>index.php/admin/transaksi/detailTransaksi/"+id;
 	}
 </script>
