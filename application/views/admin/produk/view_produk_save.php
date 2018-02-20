@@ -55,19 +55,19 @@
 				  </div>
                 </div>
 				<div class="form-group">
-                  <label for="gambar1" class="col-sm-2 control-label">Upload Ganbar 1</label>
+                  <label for="gambar1" class="col-sm-2 control-label">Upload Gambar 1</label>
 					<div class="col-sm-10">
 						<input id="gambar1" name="gambar1" type="file">
 					</div>
                 </div>
 				<div class="form-group">
-                  <label for="gambar2" class="col-sm-2 control-label">Upload Ganbar 2</label>
+                  <label for="gambar2" class="col-sm-2 control-label">Upload Gambar 2</label>
 					<div class="col-sm-10">
 						<input id="gambar2" name="gambar2" type="file">
 					</div>
                 </div>
 				<div class="form-group">
-                  <label for="gambar3" class="col-sm-2 control-label">Upload Ganbar 3</label>
+                  <label for="gambar3" class="col-sm-2 control-label">Upload Gambar 3</label>
 					<div class="col-sm-10">
 						<input id="gambar3" name="gambar3" type="file">
 					</div>
