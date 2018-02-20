@@ -173,7 +173,7 @@ class Produk extends CI_Controller {
 			$row = array();
 			
 			$row[] = '<span id="ptype'.$produk->PRODUK_DETAIL_ID.'">'.$produk->NAMA_PRODUK.'</span>'; 
-			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR1.'" style="width:50%;height:50%;"/>';
+			$row[] = '<img src="'.base_url().'aset/upload/'.$produk->GAMBAR1.'" style="width:50%;height:10%;"/>';
 			$row[] = '<span id="ptype'.$produk->PRODUK_DETAIL_ID.'">'.$produk->UKURAN.'</span>'; 
 			$row[] = '<span id="pname'.$produk->PRODUK_DETAIL_ID.'">'.$produk->STOK.'</span>'; 
 			$row[] = '<span id="pedit'.$produk->PRODUK_DETAIL_ID.'"><a title="update produk" href="javascript:void(0);" onclick="show_update(\''.$produk->PRODUK_DETAIL_ID.'\')">Update Produk</a></span>'; 
