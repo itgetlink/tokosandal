@@ -254,7 +254,7 @@ class Produk extends CI_Controller {
 			$data['NAMA_PRODUK']	= $this->input->post('namaProduk');
 			$data['KETERANGAN']		= $this->input->post('keterangan');
 			$data['HARGA']			= $this->input->post('hargaProduk');
-			$data['STOK']			= $this->input->post('stokProduk');
+			//$data['STOK']			= $this->input->post('stokProduk');
 			// print_r($data);
 			// die();
 			$save = $this->produk_model->update($data,$this->input->post('idProduk'));
