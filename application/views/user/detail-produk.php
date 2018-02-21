@@ -79,7 +79,7 @@
 						<select name="tali_depan" id="tali_depan">
 							<option value="">Tali Depan</option>
 							<?php
-							$arrwarna=array('Abu','Biru','Hijau','Kuning','Merah');
+							$arrwarna=array('Abu','Biru','Hijau','Kuning','Merah1');
 							foreach($arrwarna as $warna_depan){
 								echo '<option value="'.$warna_depan.'">'.$warna_depan.'</option>';
 							}
