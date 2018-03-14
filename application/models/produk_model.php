@@ -4,7 +4,7 @@ Class Produk_model extends CI_Model
 {
 	function save($data)
 	{
-		$this->db->insert('produk', $data);
+		$this->db->insert('v_produk_stok', $data);
 		if($this->db->affected_rows() == 1){
 			$result = true;
 		}else{
