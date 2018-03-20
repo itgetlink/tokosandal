@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/tokosandal';
+$config['base_url'] = 'http://159.65.0.228/tokosandal';
 
 /*
 |--------------------------------------------------------------------------
