@@ -96,10 +96,10 @@ class Produk extends CI_Controller {
 	function uploadfile($data,$type){
 			$new_name = $type."_".date('Y_m_d_H_i_s')."_".$data['name']; // set new name
 			$new_name = str_replace(' ','',$new_name); 
-			$config['encrypt_name'] = FALSE;
+			$config['encrypt_name'] = TRUE;
 			$config['allowed_types'] = 'jpg|jpeg|png|pdf|PDF|JPG';
 			// $config['allowed_types'] = 'jpg|jpeg|png';
-			$config['upload_path'] = './aset/upload/'; 
+			$config['upload_path'] = '../aset/upload/'; 
 			$config['max_size']	= '2000000'; // max 2 MB
 			$config['file_name'] = $new_name; //set file name config
 			// $config['max_width'] = 397;
