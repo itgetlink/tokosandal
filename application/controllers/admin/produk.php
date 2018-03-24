@@ -99,7 +99,7 @@ class Produk extends CI_Controller {
 			$config['encrypt_name'] = TRUE;
 			$config['allowed_types'] = 'jpg|jpeg|png|pdf|PDF|JPG';
 			// $config['allowed_types'] = 'jpg|jpeg|png';
-			$config['upload_path'] = '../aset/upload/'; 
+			$config['upload_path'] = './aset/upload/'; 
 			$config['max_size']	= '2000000'; // max 2 MB
 			$config['file_name'] = $new_name; //set file name config
 			// $config['max_width'] = 397;
@@ -107,7 +107,6 @@ class Produk extends CI_Controller {
 			$config['overwrite'] = TRUE;
 			
 			$this->load->library('upload', $config);
-			
 			$this->upload->initialize($config);
 			if($type == 'gambar1'){
 				$upload = $this->upload->do_upload('gambar1');
@@ -118,7 +117,6 @@ class Produk extends CI_Controller {
 			if($type == 'gambar3'){
 				$upload = $this->upload->do_upload('gambar3');
 			}
-			
 			if (!$upload)
 			{ 
 				$row['massage'] ='Tidak dapat mengunggah dokumen, ukuran atau extensi file tidak tepat.';
