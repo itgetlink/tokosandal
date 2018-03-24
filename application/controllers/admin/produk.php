@@ -43,11 +43,51 @@ class Produk extends CI_Controller {
 		// print_r($this->input->post());
 		// print_r($_FILES);
 		// die();
-		$file1 = $this->uploadfile($_FILES['gambar1'],'gambar1');
+		
+		$gambar1 			= NULL;
+		$gambar2 			= NULL;
+		$gambar3 			= NULL;
+		
+		if($_FILES['gambar1']['name']){
+			$file1 = $this->uploadfile($_FILES['gambar1'],'gambar1');
+			$new_name = "gambar1_".date('Y_m_d_H_i_s')."_".$_FILES['gambar1']['name']; // set new name
+			$gambar1 = $new_name;
+			$data['GAMBAR1']=$gambar1;
+			$x1=1;
+		}else{
+			$file1['code'] = 1;
+			//$file1['massage'] ='Gambar1 Tidak dapat mengunggah dokumen, ukuran atau extensi file tidak tepat.';
+			$x1=0;
+		}
+		if($_FILES['gambar2']['name']){
+			$file2 = $this->uploadfile($_FILES['gambar2'],'gambar2');
+			$new_name = "gambar2_".date('Y_m_d_H_i_s')."_".$_FILES['gambar2']['name']; // set new name
+			$gambar2 = $new_name;
+			$data['GAMBAR2']=$gambar2;
+			$x2=1;
+		}else{
+			$file2['code'] = 1;
+			//$file2['massage'] ='Gambar2 Tidak dapat mengunggah dokumen, ukuran atau extensi file tidak tepat.';
+			$x2=0;
+		}
+		
+		if($_FILES['gambar3']['name']){
+			$file3 = $this->uploadfile($_FILES['gambar3'],'gambar3');
+			$new_name = "gambar3_".date('Y_m_d_H_i_s')."_".$_FILES['gambar3']['name']; // set new name
+			$gambar3 = $new_name;
+			$x3=1;
+			$data['GAMBAR3']=$gambar3;
+		}else{
+			$file3['code'] = 1;
+			//$file3['massage'] ='Gambar3 Tidak dapat mengunggah dokumen, ukuran atau extensi file tidak tepat.';
+			$x3=0;
+		}
+		
+		//$file1 = $this->uploadfile($_FILES['gambar1'],'gambar1');
 		// print_r($file1);
-		$file2 = $this->uploadfile($_FILES['gambar2'],'gambar2');
+		//$file2 = $this->uploadfile($_FILES['gambar2'],'gambar2');
 		// print_r($file2);
-		$file3 = $this->uploadfile($_FILES['gambar3'],'gambar3');
+		//$file3 = $this->uploadfile($_FILES['gambar3'],'gambar3');
 		// print_r($file3);
 		
 		// die();
