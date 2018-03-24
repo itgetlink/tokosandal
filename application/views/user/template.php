@@ -77,13 +77,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  <ul class="nav navbar-nav menu__list">
 					<li class="menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/index'?>">Home <span class="sr-only">(current)</span></a></li>
 					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/produk'?>">Produk</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/customize'?>">Customize</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/about'?>">About</a></li>
-					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/contact'?>">Contact</a></li>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/customize'?>">Custom</a></li>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/contact'?>">Mail</a></li>
 					<?php  
 					if($session){ ?>
 					<li class=" menu__item"><a style="color:red" class="menu__link" href="<?php echo base_url().'index.php/user/order/listOrder'?>">Order</a></li>
+					<li class=" menu__item"><a style="color:red" class="menu__link" href="<?php echo base_url().'index.php/user/welcome/upload'?>">Upload</a></li>
 					<?php } ?>
+					<li class=" menu__item"><a class="menu__link" href="<?php echo base_url().'index.php/user/welcome/about'?>">About Us</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -393,9 +394,9 @@ function aa(){
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="product.html">Product</a></li>
-						<li><a href="customize.html">Costumize</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="customize.html">Costum</a></li>
+						<li><a href="contact.html">Mail</a></li>
+						<li><a href="about.html">About Us</a></li>
 					</ul>
 				</div>
 				

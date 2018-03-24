@@ -13,6 +13,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('email_model');
 		$this->load->model('customer_model');
 		$this->load->model('about_model');
+		$this->load->model('upload_pembayaran_model');
 	 }
 	/**
 	 * Index Page for this controller.
@@ -72,6 +73,12 @@ class Welcome extends CI_Controller {
 	{
 		$data['content'] = 'user/customize';
 		$data['data'] = $this->produk_model->load($val = 2,$type = 2);
+		$this->load->view($this->template,$data);
+	}
+
+	public function upload()
+	{
+		$data['content'] = 'user/upload-pembayaran';
 		$this->load->view($this->template,$data);
 	}
 	
@@ -178,6 +185,23 @@ class Welcome extends CI_Controller {
 		}else{
 			$result['code'] = 0; 
 			$result['massage'] = 'email gagal di kirim'; 
+		}
+		echo json_encode($result);
+	}
+
+	public function sendUploadPembayaran()
+	{   
+		$data['NAMA']				= $this->input->post('nama');
+		$data['PESAN']				= $this->input->post('pesan');
+		//$data['BUKTI_PEMBAYARAN']	= $this->input->post('buktipembayaran');
+		
+		$save = $this->upload_pembayaran_model->save($data);			
+		if($save){
+			$result['code'] = 1; 
+			$result['massage'] = 'bukti pembayaran berhasil dikirim'; 
+		}else{
+			$result['code'] = 0; 
+			$result['massage'] = 'bukti pembayaran gagal dikirim'; 
 		}
 		echo json_encode($result);
 	}
