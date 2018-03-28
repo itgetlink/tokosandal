@@ -191,19 +191,59 @@ class Welcome extends CI_Controller {
 
 	public function sendUploadPembayaran()
 	{   
-		$data['NAMA']				= $this->input->post('nama');
-		$data['PESAN']				= $this->input->post('pesan');
-		//$data['BUKTI_PEMBAYARAN']	= $this->input->post('buktipembayaran');
-		
-		$save = $this->upload_pembayaran_model->save($data);			
-		if($save){
-			$result['code'] = 1; 
-			$result['massage'] = 'bukti pembayaran berhasil dikirim'; 
-		}else{
-			$result['code'] = 0; 
-			$result['massage'] = 'bukti pembayaran gagal dikirim'; 
+		$file = $this->uploadfile($_FILES['buktipembayaran']);
+
+		if($file['code'] == 0){
+			//$file['GAMBAR'] = '1';
+			//echo json_encode($file);//return gagal upload
 		}
-		echo json_encode($result);
+		else{
+
+			$data['NAMA']				= $this->input->post('nama');
+			$data['PESAN']				= $this->input->post('pesan');
+			$data['BUKTI_PEMBAYARAN']	= $file['new_name'];
+		
+			$save = $this->upload_pembayaran_model->save($data);			
+			if($save){
+				$result['code'] = 1; 
+				$result['massage'] = 'bukti pembayaran berhasil dikirim'; 
+			}else{
+				$result['code'] = 0; 
+				$result['massage'] = 'bukti pembayaran gagal dikirim'; 
+			}
+			echo json_encode($result);
+		}
+	}
+
+	function uploadfile($data){
+		$new_name = date('Y_m_d_H_i_s')."_".$data['name']; // set new name
+		$new_name = str_replace(' ','',$new_name); 
+		$config['encrypt_name'] = TRUE;
+		$config['allowed_types'] = 'jpg|jpeg|png|pdf|PDF|JPG';
+		// $config['allowed_types'] = 'jpg|jpeg|png';
+		$config['upload_path'] = './aset/upload/'; 
+		$config['max_size']	= '2000000'; // max 2 MB
+		$config['file_name'] = $new_name; //set file name config
+		// $config['max_width'] = 397;
+		// $config['max_height'] = 467;
+		$config['overwrite'] = TRUE;
+		
+		$this->load->library('upload', $config);
+		
+		$this->upload->initialize($config);
+		//if($type == 'buktipembayaran'){
+			$upload = $this->upload->do_upload('buktipembayaran');
+		//}
+		
+		if (!$upload)
+		{ 
+			$row['massage'] ='Tidak dapat mengunggah dokumen, ukuran atau extensi file tidak tepat.';
+			$row['code'] = 0;
+		}else{
+			$row['code'] = 1;
+			$row['new_name'] = $new_name;
+		}
+		return $row;
 	}
 	
 	public function aa()
